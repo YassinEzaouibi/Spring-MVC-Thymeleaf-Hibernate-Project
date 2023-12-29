@@ -3,32 +3,36 @@
 ## Aperçu du Projet
 
 L'entreprise artisanale ArtWood a entrepris le développement d'une application de gestion des commandes dans le but d'optimiser le processus de traitement des commandes clients. L'objectif principal est d'améliorer l'efficacité opérationnelle en facilitant l'ajout de nouvelles commandes, en suivant l'état d'avancement des commandes en cours et en marquant les commandes comme complètes une fois qu'elles ont été traitées.
-
-## Diagramme de Classes
-
-![Diagramme de Classes](link_to_diagram)
-
 ## Structure des Packages
 
 ```
 ordercraft.project
-|-- controller
-|-- dao
-    |-- Interface
-|-- DataBase
-|-- model
-|-- service
-```
+|-- main
+    |-- java
+        |--com.ordercraft
+            |-- entity
+            |-- enums
+            |-- repository
+            |-- service
+            |-- web
+    |-- resources
+    |-- webapp
+            |-- resources
+            |-- WEB-INF
+               |-- views
+                     |-- client
+                     |-- error
+                     |-- order
+                     |-- product
+
+
 
 ## Classes et Interfaces
 
-### 1. ConnectDataBase (Classe)
-
-Cette classe est responsable de la gestion de la connexion à la base de données.
 
 #### Attributs :
 
-- `url: jdbc:mysql://localhost:3306/ordercraft`
+- `url: jdbc:mysql://localhost:3306/customer_db`
 - `username: root`
 - `password:`
 
