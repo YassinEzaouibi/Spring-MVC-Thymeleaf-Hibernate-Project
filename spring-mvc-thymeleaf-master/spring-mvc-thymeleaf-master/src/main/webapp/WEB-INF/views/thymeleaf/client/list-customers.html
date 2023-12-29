@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Clients List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+</head>
+<body class="bg-gray-100">
+<div class="container max-w-full">
+    <header>
+        <div class="bg-indigo-900 px-4 ">
+            <div class="flex flex-row justify-between border-b border-indigo-400 border-opacity-25 py-6  ">
+                <div class="flex justify-start lg:w-0 lg:flex-1">
+                    <h1 class="text-xl font-bold font-normal text-indigo-400">Orders Management System</h1>
+                </div>
+                <div class="end-3/3 space-x-10 pr-12">
+                    <a href="/spring/customer/list" class="whitespace-nowrap text-base font-medium text-indigo-300 text-white"> Clients </a>
+                    <a href="/spring/products/list" class="whitespace-nowrap text-base font-medium text-indigo-300 hover:text-white"> Products </a>
+                    <a href="/spring/orders/list" class="whitespace-nowrap text-base font-medium text-indigo-300 hover:text-white"> Orders </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <table class="container mx-auto mt-8 border border-gray-300">
+        <thead>
+        <tr>
+            <th class="py-2 px-4 border-b">ID</th>
+            <th class="py-2 px-4 border-b">First Name</th>
+            <th class="py-2 px-4 border-b">Last Name</th>
+            <th class="py-2 px-4 border-b">Email</th>
+            <th class="py-2 px-4 border-b">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="customer : ${customers}">
+            <td class="py-2 px-4 border-b" th:text="${customer.id}"></td>
+            <td class="py-2 px-4 border-b" th:text="${customer.first_name}"></td>
+            <td class="py-2 px-4 border-b" th:text="${customer.last_name}"></td>
+            <td class="py-2 px-4 border-b" th:text="${customer.email}"></td>
+            <td class="py-2 px-4 border-b">
+                <a th:href="@{'/customers/' + ${customer.id}}" class="text-green-500 hover:underline mr-2">Edit</a>
+                <a th:href="@{'/customers/' + ${customer.id}}" class="text-red-500 hover:underline">Delete</a>
+            </td>
+        </tr>
+
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
